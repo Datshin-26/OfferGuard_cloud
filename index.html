@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="description" content="Review internship offers for common warning signs with OfferGuard.">
+    <title>OfferGuard | Internship Offer Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎓 OfferGuard</h1>
+    <p>Internship offer risk checker</p>
+
+    <div class="card">
+        <h2>🔍 Review an Internship Offer</h2>
+
+        <form id="offerForm">
+            <input type="text" id="company" maxlength="200"
+                   placeholder="Company Name" aria-label="Company Name" required>
+
+            <input type="url" id="website" maxlength="320"
+                   placeholder="Company Website (https://...)"
+                   aria-label="Company Website (https://...)">
+
+            <input type="email" id="email" maxlength="320"
+                   placeholder="Recruiter Email" aria-label="Recruiter Email">
+
+            <select id="fee">
+                <option value="no">No Registration Fee</option>
+                <option value="yes">Registration Fee Required</option>
+            </select>
+
+            <textarea id="message" maxlength="5000"
+                      placeholder="Paste Internship Offer Message"
+                      aria-label="Paste Internship Offer Message" required></textarea>
+
+            <button type="submit">Check offer</button>
+        </form>
+        <p id="status" role="status" aria-live="polite"></p>
+        <p>Checks are saved to <code>data/verifications.csv</code>.</p>
+    </div>
+
+    <div class="card" id="resultCard" style="display:none;">
+        <h2>📊 Verification Result</h2>
+
+        <h3 id="riskLevel"></h3>
+        <h2 id="riskScore"></h2>
+
+        <div id="reasons"></div>
+    </div>
+
+    <div class="card">
+        <h2>📋 Verification History</h2>
+        <div id="history" aria-live="polite"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
